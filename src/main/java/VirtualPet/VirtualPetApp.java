@@ -10,29 +10,10 @@ public class VirtualPetApp {
 
 		VirtualPet Penelope = new VirtualPet(50, 10, 100, 50);
 		System.out.println("Welcome, my name is Penelope the Penguin." + " Let's play a game.");
-System.out.println("	        a8888b.   ");
-System.out.println("           d888888b.  ");
-System.out.println("           8P YP Y88   ");
-System.out.println("           8|o||o|88    ");
-System.out.println("           8'    .88     ");
-System.out.println("           8`._.' Y8. 	");
-System.out.println("          d/      `8b.  ");
-System.out.println("         dP   .    Y8b. ");
-System.out.println("        d8:'     `::88b ");
-System.out.println("       d8"         'Y88b  "); 
-System.out.println("      :8P    '      :888 ");
-System.out.println("       8a.   :     _a88P ");
-System.out.println("     ._/"Yaa_:   .| 88P| ");
-System.out.println("jgs  \    YP"    `| 8P  `. ");
-System.out.println("a:f  /     \.___.d|    .'    ");
-System.out.println("     `--..__)8888P`._.'     ");
 
-		while (Penelope.getHappiness() <=200) {
-
-			Penelope.tick += 1;
-
-			System.out.println("My hunger is at " + Penelope.getHunger() + ", my thirst level is " + Penelope.getThirst()
-					+ ", my playfulness is " + Penelope.getPlay() + ".");
+			System.out.println("My hunger is at " + Penelope.getHunger());
+			System.out.println("My thirst level is " + Penelope.getThirst());
+			System.out.println("My playfulness is " + Penelope.getPlay());
 			System.out.println("My happiness is " + Penelope.getHappiness() + " . Let's see how happy you can make me today." + " Are you ready to have some fun?"); 
 			
 		
@@ -50,6 +31,7 @@ System.out.println("     `--..__)8888P`._.'     ");
 				int hunger = input.nextInt();
 				System.out.println("You choose to feed me " + hunger + " fish");
 				Penelope.feed(hunger);
+				System.out.println("I'm so stuffed! " + Penelope.getHappiness() + " I can't wait to eat again!!");
 				input.nextLine();
 
 			} else if (choice.equals("2")) {
@@ -57,6 +39,7 @@ System.out.println("     `--..__)8888P`._.'     ");
 				int thirst = input.nextInt();
 				System.out.println("You choose to give me " + thirst + " cups of water.");
 				Penelope.drink(thirst);
+				System.out.println("I love to stay hydrated! " + Penelope.getHappiness() + " I love water!");
 				input.nextLine();
 
 			} else if (choice.equals("3")) {
@@ -64,9 +47,11 @@ System.out.println("     `--..__)8888P`._.'     ");
 				int play = input.nextInt();
 				System.out.println("You threw that " + play + " Feet! Wow, that was fun");
 				Penelope.swim(play);
+				System.out.println("Playtime is my favorite!! " + Penelope.getHappiness() + " I need a nap now.");
 				input.nextLine();
 
 			} else if (choice.equals("4")) {
+				System.out.println(Penelope.getHappiness()+ " Wow, I am such a happy penguin!");
 				System.out.println("Thanks for playing!");
 				System.exit(0);
 
@@ -74,8 +59,15 @@ System.out.println("     `--..__)8888P`._.'     ");
 				System.out.println("I don't understand your selection. Try again");
 
 			}
-		} while (!choice.equals("4"));
+			
+			Penelope.tick +=1;
+			Penelope.tick();		
+				
 
+		} while (!choice.equals("4"));
+		
+			input.close();
+			
 	}
 	}
-}
+

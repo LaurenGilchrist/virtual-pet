@@ -29,6 +29,7 @@ public class VirtualPet {
 
 	public void PlayTime(int playTime) {
 		hunger += 25;
+		thirst += 5;
 		happiness +=50;
 		
 	}
