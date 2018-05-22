@@ -5,12 +5,14 @@ public class VirtualPet {
 	private int hunger;
 	private int thirst;
 	private int play;
+	public int tick;
+	private int happiness;
 	
-	public VirtualPet(int hunger, int thirst, int play) {
+	public VirtualPet(int hunger, int thirst, int play, int happiness) {
 	 this.hunger = hunger;	
 	 this.thirst = thirst;
 	 this.play = play;
-	 
+	 this.happiness = happiness;
 	}
 
 	public int getHunger() {
@@ -21,11 +23,14 @@ public class VirtualPet {
 	public void feed(int feed) {
 	
 		hunger -=15;
+		happiness +=25;
 			
 		}
 
 	public void PlayTime(int playTime) {
 		hunger += 25;
+		happiness +=50;
+		
 	}
 
 	public int getThirst() {
@@ -35,7 +40,7 @@ public class VirtualPet {
 
 	public void drink(int drink) {
 		thirst-=drink;
-		
+		happiness +=15;
 	}
 
 	public int getPlay() {
@@ -46,7 +51,7 @@ public class VirtualPet {
 	public void swim(int swim) {
 		
 		play -= swim;
-		
+		happiness +=50;
 		
 		
 		
@@ -58,8 +63,14 @@ public class VirtualPet {
 		play += 50;
 		
 		
+		
 				
 		
+	}
+
+	public int getHappiness() {
+		
+		return happiness;
 	}
 
 	
