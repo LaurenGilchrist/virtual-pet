@@ -5,7 +5,7 @@ public class VirtualPet {
 	private int hunger;
 	private int thirst;
 	private int play;
-	public int tick;
+	
 	private int happiness;
 	
 	public VirtualPet(int hunger, int thirst, int play, int happiness) {
